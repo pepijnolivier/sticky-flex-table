@@ -1,0 +1,195 @@
+/*
+ * I guess most of these values
+ * should be set via styled-components,
+ * so they can be overridden at runtime
+ */
+
+
+:root {
+  /* 
+   * Spacer width:
+   * This should minimum be the summed up width of the sticky columns on the right side.
+   * If this width is not sufficient, the content of the right-most columns 
+   * might become unreachable by scrolling horizontally.
+   * This seems necessary for firefox, but not for chromium
+   *
+   * Required if using sticky columns on the right side
+   */
+  --spacerWidth: 200px; 
+
+  /*
+   * The width of the wrapping container
+   * Required: ?
+   */
+  --maxTableWidth: 1024px;
+  --maxTableWidth: calc(100vw - 100px);
+  
+  --maxTableHeight: 400px;
+  --maxTableHeight: calc(100vh - 180px);
+
+  --tableMargin: 0px auto;
+  --tableCellHeight: 18px;
+  --tableCellPadding: 16px;
+
+  --tableHeadCellHeight: 50px;
+  --tableHeadBackgroundColor: #EEE;
+}
+
+.sft-content td div, .sft-content th div {
+  min-width: 40px;
+  max-width: 100px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  word-wrap: break-word;
+  white-space: initial;
+
+}
+
+.sft-spacer {
+  width: 100%;
+}
+@-moz-document url-prefix() {
+  .sft-spacer {
+      min-width: var(--spacerWidth);
+  }
+}
+
+.pull-right {
+  float: right;
+}
+
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+table td, table th {
+  white-space: nowrap;
+
+  overflow-y: hidden;
+  padding: var(--tableCellPadding);
+}
+
+.table thead {
+  border-top: 0px;
+}
+
+.table thead tr th div {
+  /* we can use these when sorted on a given column */
+  border-top: 5px solid black;
+  border-bottom: 5px solid black;
+
+  border-top: 5px transparent;
+  border-bottom: 5px transparent;
+  
+  /* border-top: 5px solid black; */
+  /* border-bottom: 5px solid black; */
+}
+
+.table td {
+  border-top: 1px solid black;
+}
+
+th > div, td > div {
+  margin: auto auto;
+}
+
+td > div {
+  height: 18px;/* var(--tableCellHeight); */
+  max-height: var(--tableCellHeight);
+}
+
+th > div, td > div {
+  /*font-size: 0.75rem;*/
+}
+
+thead th { 
+  position: sticky; 
+  top: 0; 
+  background-color: var(--tableHeadBackgroundColor);
+  width: 100%;
+}
+
+
+
+thead tr th div {
+  height: 50px; /* var(--tableHeadCellHeight); */
+  max-height: var(--tableHeadCellHeight);
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+
+
+.sft-sticky-left{
+  /* user-select: none; */
+  position: sticky; 
+  left: 0;
+  
+  z-index: 1; 
+  background: #AAA;
+  height: 100%;
+}
+
+.sft-sticky-left tr td:last-child {
+  /* border-right: 1px dotted black; */
+}
+.sft-sticky-right tr td:first-child {
+  border-left: 1px dotted black;
+}
+
+.sft-sticky-right {
+  /* user-select: none; */
+  position: sticky;
+  right: 0;
+
+  z-index: 1; 
+  background: #AAA;
+  height: 100%;
+
+}
+
+.sft-content tbody td, .sft-content thead th {
+  width: 1%;
+}
+.sft-content tbody td.spacer, .sft-content thead th.spacer {
+  width: 100%;
+}
+
+.sft-wrapper {
+  font-family: monospace;
+  border-radius: 5px 0px;
+
+  max-width: var(--maxTableWidth);
+  margin: var(--tableMargin);
+  margin: 0 auto;
+  max-height: 400px;
+  max-height: var(--maxTableHeight);
+  background-color: #CCC;
+  
+  
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.sft-wrapper-wrapper {
+  margin: 50px 50px;
+
+  overflow-y: auto; /* scroll */
+  overflow-x: auto; /* scroll */
+
+  background-color: #CCC; /* to mask heavy scrollwheel glitches */
+}
+
+
+.sft-content {
+  /* Lets middle column shrink/grow to available width */
+  flex: 1 1 auto;
+  /* overflow-x: scroll; */
+  height: 100%;
+}
