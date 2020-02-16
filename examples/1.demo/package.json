@@ -16,6 +16,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "homepage": "https://pepijnolivier.github.io/sticky-flex-table/examples/1.demo/build/",
   "eslintConfig": {
     "extends": "react-app"
   },
