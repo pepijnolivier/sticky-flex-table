@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/sticky-flex-table/examples/1.demo/build/static/css/main.aaba24d5.chunk.css",
+    "main.js": "/sticky-flex-table/examples/1.demo/build/static/js/main.725a0af9.chunk.js",
+    "main.js.map": "/sticky-flex-table/examples/1.demo/build/static/js/main.725a0af9.chunk.js.map",
+    "runtime-main.js": "/sticky-flex-table/examples/1.demo/build/static/js/runtime-main.3fbb2672.js",
+    "runtime-main.js.map": "/sticky-flex-table/examples/1.demo/build/static/js/runtime-main.3fbb2672.js.map",
+    "static/js/2.9b2bc070.chunk.js": "/sticky-flex-table/examples/1.demo/build/static/js/2.9b2bc070.chunk.js",
+    "static/js/2.9b2bc070.chunk.js.map": "/sticky-flex-table/examples/1.demo/build/static/js/2.9b2bc070.chunk.js.map",
+    "index.html": "/sticky-flex-table/examples/1.demo/build/index.html",
+    "precache-manifest.8d950c07be8f17929253a9603b764a0d.js": "/sticky-flex-table/examples/1.demo/build/precache-manifest.8d950c07be8f17929253a9603b764a0d.js",
+    "service-worker.js": "/sticky-flex-table/examples/1.demo/build/service-worker.js",
+    "static/css/main.aaba24d5.chunk.css.map": "/sticky-flex-table/examples/1.demo/build/static/css/main.aaba24d5.chunk.css.map",
+    "static/js/2.9b2bc070.chunk.js.LICENSE.txt": "/sticky-flex-table/examples/1.demo/build/static/js/2.9b2bc070.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3fbb2672.js",
+    "static/js/2.9b2bc070.chunk.js",
+    "static/css/main.aaba24d5.chunk.css",
+    "static/js/main.725a0af9.chunk.js"
+  ]
+}
